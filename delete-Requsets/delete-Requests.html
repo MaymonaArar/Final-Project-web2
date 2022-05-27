@@ -1,0 +1,80 @@
+<div class="wrapper">
+    <!--Top menu -->
+    <div class="sidebar">
+       <!--profile image & text-->
+       <div class="profile">
+        <img src="C:\Users\A\OneDrive\Desktop\Blood system\images\Blood logo.jpg" width="60" height="60" alt="" loading="lazy" id="logo">
+        <h3>BLOOD LAP</h3>
+        
+    </div>
+        <!--menu item-->
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="item">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="item">Donors</span>
+                </a>
+            </li>
+            <li>
+                
+                <a href="#">
+                    <span class="icon"><i class="fas fa-bars"></i></span>
+                    
+                    <span class="item">Requests</span>
+                    
+                   
+                      
+
+                    
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="section">
+        <div class="top_navbar">
+            <div class="hamburger">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</div>
+
+</div>
+<div class="center">
+    <div class="delete">
+
+        <form [formGroup]="formDLETE" (ngSubmit)="Delete()">
+            <h2 class="text-center">Delete Requests</h2>
+    
+            <br>
+            <label> </label>
+            <input type="number" class="form-control" placeholder="Enter Blood_Group" size="30" formControlName="Blood_Group">
+            <input type="number" class="form-control" placeholder="Enter Patient_Name" size="30" formControlName="Patient_Name">
+    
+            <div class="text-center">
+                <a type="submit" class="button" (click)="deleteRequests()">Delete Requests</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+   var hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", function(){
+    document.querySelector("body").classList.toggle("active");
+})
+</script>
