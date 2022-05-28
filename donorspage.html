@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donors Page</title>
+    <link rel="stylesheet" href="donors.css">
+</head>
+<body>
+    <div class="container">
+        <label for="#">#</label>
+        <input type="text" id="#" name="#">
+
+        <label for="Dname">Donors Name</label>
+        <input type="text" id="Dname" name="Dname">
+
+        <label for="bloodgroup">Blood Group</label>
+        <input type="text" id="bloodgroup" name="bloodgroup">
+
+        <label for="info">Information</label>
+        <input type="text" id="info" name="info">
+
+        <label for="previousdonation">Previous Donation</label>
+        <input type="text" id="previousdonation" name="previousdonation">
+
+      <!--  <label for="action">Action</label> -->
+
+        <input type="button" id="button" value ="ADD"  onclick="AddRow()">
+    </div>
+    <table class="show">
+        <tr>
+            <th>#</th>
+            <th>Donors Name</th>
+            <th>Blood Group</th>
+            <th>Information</th>
+            <th>Previous Donation</th>
+             </tr>
+    </table>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var n=1;
+        var x=0;
+
+        function AddRow(){
+            var AddRown = document.getElementById('show')
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("#").Value;
+            list2[x] = document.getElementById("Dname").Value;
+            list3[x] = document.getElementById("bloodgroup").Value;
+            list4[x] = document.getElementById("info").Value;
+            list5[x] = document.getElementById("previousdonation").Value;
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+
+            n++;
+            x++;
+        }
+    </script>
+</body>
+</html>
