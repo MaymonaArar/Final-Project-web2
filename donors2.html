@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="donors.css">
+    <title>donors2</title>
+</head>
+<body>
+    <div class="donors">
+        <div class="head">
+            <h2>Donors Page</h2>
+        </div>
+
+        <div class="inputs">
+            <label for="#">#</label>
+            <input onkeyup="get()" placeholder="#" type="number" id="#">
+
+            <label for="Dname">Donors Name</label>
+            <input onkeyup="get()" placeholder="donor name" type="text" id="name">
+
+            <label for="bloodgroup">Blood Group</label>
+            <input onkeyup="get()" placeholder="blood group" type="text" id="Blood Group">
+
+            <label for="info">Information</label>
+            <input onkeyup="get()" placeholder="Information" type="text" id="Information">
+
+            <label onkeyup="get()" for="previousdonation">Previous Donation</label>
+            <input placeholder="previous donation" type="text" id="previous donation">
+
+            <button id="submit">Add</button>
+        </div>
+        <div class="outputs">
+            <div class="search">
+               
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Donors Name</th>
+                    <th>Blood Group</th>
+                    <th>Information</th>
+                    <th>Previous Donation</th>  
+                    <th>update</th>
+                    <th>delete</th>
+                    </tr>
+
+                    <tbody id="tbody">
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="donors2.js"></script>
+</body> 
+</html>
