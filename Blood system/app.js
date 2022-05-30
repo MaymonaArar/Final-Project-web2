@@ -9,7 +9,7 @@ const app = express();
 const connection = mysql.createConnection({
 	host     : 'localhost',
 	user     : 'root',
-	password : '12345',
+	password : '',
 	database : 'blood_system'
 });
 
@@ -20,17 +20,72 @@ app.use(session({
 
 	
 }));
+app.set('views', __dirname + '/views');
+app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
-
-//app.use(express.static(__dirname + 'public'))
-
-//console.log("Server Started");
-
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/"+"views/Login.html");
+	if (req.session.loggedin) {
+		res.render('Home')
+	}else{
+		res.send("Please log in to view this page!")
+	}
 });
+
+
+//Masa's
+app.get('/Donors', function(request, response) {
+	if (request.session.loggedin) {
+		response.render('Donors')
+	} else {
+		response.send('Please login to view this page!');
+	}
+	
+});
+
+app.get('/bloodRequest', (req, res)=>{
+	connection.query("SELECT * FROM requests", (error, result)=>{ 
+		res.render('request', {result: result})
+	})
+})
+
+app.get('/newRequest', (req, res)=>{
+	res.render('newRequest')
+})
+
+app.post('/newRequest', (req, res)=>{
+	connection.query("INSERT INTO `requests` (`Date`, `Patient_name`, `Blood_Group`, `Volume`) VALUES (?, ?, ?, ?)", [req.body.expiration, req.body.patName,req.body.bloodGroup,req.body.volume], (error)=>{
+		if(error) throw error
+		res.redirect('/newRequest');
+	})
+})
+
+app.get('/delete/:reqId', (req, res)=>{
+	connection.query("DELETE FROM `requests` WHERE (`idRequests` = ?)", [req.params.reqId], (error)=>{
+		if(error)
+			throw error
+		res.redirect('/bloodRequest')
+	})
+})
+
+app.get('/edit/:reqId', (req, res)=>{
+	connection.query("SELECT * FROM `requests` WHERE idRequests = ?", [req.params.reqId], (error, result)=>{
+		res.render('editRequest', {result: result[0]})
+	})
+})
+
+app.post('/editRequest/:reqId', (req, res)=>{
+	connection.query("UPDATE `requests` SET `Patient_name` = ?, `Blood_Group` = ?, `Volume` = ?  WHERE (`idRequests` = ?)", [req.body.patName, req.body.bloodGroup,req.body.volume, req.params.reqId], (error)=>{
+		if(error)
+			throw error
+		res.redirect('/bloodRequest')
+	})
+})
+//Masa's ends
+
+
+
 app.get('/styles/Login.css', function(req, res) {
 	res.sendFile(__dirname + "/" + "styles/Login.css");
 });
@@ -55,8 +110,6 @@ app.get('/ChangePass.html', function(req, res) {
 			} else {
 				//response.send('Incorrect Username and/or Password!');
 				response.redirect('/');
-				
-				
 			}
 			response.end();
 		});
@@ -67,34 +120,14 @@ app.get('/ChangePass.html', function(req, res) {
 });
 
 app.post('/Donors', function(request, response) {
-	
-		response.redirect('/');
+	response.redirect('/');
 		
 });
 
-app.get('/Home', function(request, response) {
-	if (request.session.loggedin) {
-		//response.render("/views/Home.html");
-		response.sendFile(__dirname + "/"+"views/Home.html");
-	
-	} else {
-		response.send('Please login to view this page!');
-	}
-	
-});
-app.get('/Donors', function(request, response) {
-	if (request.session.loggedin) {
-		
-		response.sendFile(__dirname + "/"+"views/Donors.html");
-	
-	} else {
-		response.send('Please login to view this page!');
-	}
-	
-});
+
 app.get('/blood', function(request, response){
 	connection.query('SELECT `Blood_amount` FROM `blood`', function (error, results) {
-		if (error) {
+		if (error) { 
 			console.log(error);
 		}
 		res.send(results);
