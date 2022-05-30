@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+       <style>
+            *{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: #FFFFFF;
+}
+
+.wrapper .sidebar{
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #546E7A;
+    color: #546E7A;
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #546E7A;
+    width: 30px;
+    display: inline-block;
+}
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #EE0004;
+
+    background:white;
+    border-right: 2px solid #546E7A;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+    color: #EE0004;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+    display: block;
+}
+.wrapper .section{
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    background: #EE0004;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+}
+
+.wrapper .section .top_navbar .hamburger a{
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+    color: #546E7A;
+}
+
+
+body.active .wrapper .sidebar{
+    left: -225px;
+}
+
+body.active .wrapper .section{
+    margin-left: 0;
+    width: 100%;
+}
+
+.wrapper  >div > button {
+
+    color: #546E7A;
+    margin-left: 1260px;
+    margin-bottom: 120px;
+
+}
+
+        /*----------------------------------------------------------*/
+            td{
+                vertical-align: middle !important;
+                padding: 20px;
+                
+                
+            }
+            td p{
+                margin: unset;
+                padding: 20px;
+                color: black;
+                
+            }
+            img{
+                max-width:100px;
+                max-height: 150px;
+            }
+            tr{
+                color: #EE0004;
+            }
+            
+.grid-container {
+
+display: grid;
+margin:auto;
+border: 2px solid black;
+margin-top: 50px;
+margin-right: 30px;
+width: 80%;
+grid-template-columns: auto auto auto auto;
+gap: 10px;
+background-color: #FFFFFF;
+padding: 20px;
+}
+
+
+.grid-container > div {
+background-color:#FFFFFF ;
+padding: 30px;
+padding-top: 10px;
+margin: 5px;
+text-align: right;
+font-size: 20px;
+}
+.grid-container > div .card-header > b{
+    padding-right: 300px;
+    font-size: 30px;
+}
+.grid-container > div .float:right >button{
+    
+    margin-top: 1px;
+    color: #EE0004 ;
+    background-color: #EE0004;
+    
+
+}
+
+        </style>
+    </head>
+<body>
+    <form action="/Donors" method="POST">
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+           <div class="profile">
+            <img src="logo.jpg" width="60" height="60" alt="" loading="lazy" id="logo">
+            <h3>BLOOD LAP</h3>
+            
+        </div>
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Donors</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-bars"></i></span>
+                        <span class="item">Requests</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/Login.html">
+                        <span class="icon"><i class="fa fa-sign-out"></i></span>
+                        <span class="item">Logout</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            
+
+        </div>
+        
+        
+
+
+
+    </div>
+
+    </div>
+    <div class="grid-container">
+        <div class="col-lg-12">
+            <div class="row mb-4 mt-4">
+                <div class="col-md-12">
+                    
+                </div>
+            </div>
+        </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <b>List of Donors</b>
+                        <span class="float:right"><button style="background-color:  #EE0004;"><a style="color: black ;" href="javascript:void(0)" id="new_donor">
+                    <i class="fa fa-plus" style="color: black;"></i> New Entry
+                </a></button></span>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+                    <div class="card-body">
+                        <table class="table table-condensed table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="">#</th>
+                                    <th class="">Donor</th>
+                                    <th class="">Blood Group</th>
+                                    <th class="">Information</th>
+                                    <th class="">Date</th>
+                                    <th class="">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                <tr> <hr>
+                                    <td class=""><p>1</p></td>
+                                    <td class="">
+                                         <p> <b>Ahmad</b></p>
+                                    </td>
+                                    <td class="">
+                                         <p> <b>A+</b></p>
+                                    </td>
+                                    <td class="">
+                                         <p>Email: <b>Ahmad@gmail.com</b></p>
+                                         <br>
+                                         <p>Contact #: <b>0566878458</b></p>
+                                         <br>
+                                         <p>Address: <b>Nablus</b></p>
+                                    </td>
+                                    <td>
+                                        <p>15-5-2022</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-primary edit_donor" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger delete_donor" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+                                        
+                                    </td>
+                                </tr>
+
+                                <tr> 
+                                    <td class=""><p>2</p></td>
+                                    <td class="">
+                                         <p> <b>Sara</b></p>
+                                    </td>
+                                    <td class="">
+                                         <p> <b>AB+</b></p>
+                                    </td>
+                                    <td class="">
+                                         <p>Email: <b>Sara@gmail.com</b></p>
+                                         <br>
+                                         <p>Contact #: <b>0564526678</b></p>
+                                         <br>
+                                         <p>Address: <b>Nablus</b></p>
+                                    </td>
+                                    <td>
+                                        <p>29-5-2022</p>
+                                    </td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-primary edit_donor" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger delete_donor" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+                                        
+                                    </td><hr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+      </div>
+      
+      
+
+</form>
+    
+  <script>
+    var hamburger = document.querySelector(".hamburger");
+ hamburger.addEventListener("click", function(){
+     document.querySelector("body").classList.toggle("active");
+ })
+</script>
+</body>
+
+</html>
