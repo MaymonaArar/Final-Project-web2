@@ -185,25 +185,25 @@ font-size: 20px;
             <!--menu item-->
             <ul>
                 <li>
-                    <a href="#" class="active">
+                    <a href="/Home" class="active">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/Donors">
                         <span class="icon"><i class="fas fa-user-friends"></i></span>
                         <span class="item">Donors</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/bloodRequest">
                         <span class="icon"><i class="fas fa-bars"></i></span>
                         <span class="item">Requests</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/views/Login.html">
+                    <a href="/">
                         <span class="icon"><i class="fa fa-sign-out"></i></span>
                         <span class="item">Logout</span>
                     </a>
@@ -241,7 +241,7 @@ font-size: 20px;
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <b>List of Donors</b>
+                        <b>List of Requests</b>
                         <span class="float:right"><button style="background-color:  #EE0004;"><a style="color: black ;" href="/newRequest" id="new_donor">
                     <i class="fa fa-plus" style="color: black;"></i> New Entry
                 </a></button></span>
@@ -255,10 +255,9 @@ font-size: 20px;
                         <table class="table table-condensed table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th class="">#</th>
-                                    <th class="">Donor</th>
-                                    <th class="">Blood Group</th>
-                                    <th class="">Information</th>
+                                    
+                                    <th class="">Volume</th>
+                                    <th class="">Patient Name</th> 
                                     <th class="">Date</th>
                                     <th class="">Action</th>
                                 </tr>
@@ -271,19 +270,16 @@ font-size: 20px;
                     
                                                 <tr>
                                                     <hr>
-                                    <td class=""><p>1</p></td>
-                                    <td class="">
-                                         <p> <b>Ahmad</b></p>
-                                    </td>
-                                    <td class="">
-                                         <p> <b>A+</b></p>
-                                    </td>
+                                                    
                                     <td class="">
                                         <%= result.Volume %> 
                                          <br>
-                                         <p>Blood Group: <b><%= result.Blood_Group%></b></p>
+                                    <td>
+                                         <p> <%= result.Blood_Group%></b></p>
                                          <br>
-                                         <p>Patient Name: <b><%= result.Patient_name %></b></p>
+                                    </td>
+                                    <td> 
+                                         <p><%= result.Patient_name %></b></p>
                                     </td>
                                     <td>
                                         <p><%= result.Date%></p>
