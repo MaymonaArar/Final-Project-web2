@@ -57,7 +57,7 @@ app.get('/newRequest', (req, res)=>{
 app.post('/newRequest', (req, res)=>{
 	connection.query("INSERT INTO `requests` (`Date`, `Patient_name`, `Blood_Group`, `Volume`) VALUES (?, ?, ?, ?)", [req.body.expiration, req.body.patName,req.body.bloodGroup,req.body.volume], (error)=>{
 		if(error) throw error
-		res.redirect('/newRequest');
+		res.redirect('/bloodRequest');
 	})
 })
 
