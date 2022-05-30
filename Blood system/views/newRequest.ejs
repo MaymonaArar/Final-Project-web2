@@ -1,0 +1,93 @@
+
+
+    <div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+           <div class="profile">
+            <img src="C:\Users\A\OneDrive\Desktop\Blood system\images\Blood logo.jpg" width="60" height="60" alt="" loading="lazy" id="logo">
+            <h3>BLOOD LAP</h3>
+            
+        </div>
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a href="/" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Donors">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Donors</span>
+                    </a>
+                </li>
+                <li>
+                    
+                    <a href="/bloodRequest">
+                        <span class="icon"><i class="fas fa-bars"></i></span>
+                        <span class="item">Requests</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+    
+</div>
+    <div class="center">
+        <div class="ADD">
+            <form action="newRequest" method="POST">
+                <h2 class="text-center">Add Request Details</h2>
+                <div class="row">
+        
+                    <div class="col-md-6">
+                        <br>  
+                        <input required type="text" class="form-control" placeholder="Add Blood_Group" name="bloodGroup">
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <input required type="text" class="form-control" placeholder="Add Patient_Name" name="patName">
+                    </div>
+        
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                    <br>
+                        <input required type="number" class="form-control" placeholder="Add volume" name="volume">
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <input required type="date" class="form-control" placeholder="Expiration Date Update mm/dd/yyyy" name="expiration" >
+                    </div>
+                </div>
+                <br<
+        
+                <div class="text-center">
+                    <button type="submit" class="button">Add Request</a>
+                </div>
+            </form>
+        </div>
+    </div> 
+
+
+  <script>
+       var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+  </script>
